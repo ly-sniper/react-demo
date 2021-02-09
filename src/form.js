@@ -2,8 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 
 import formData from './formData';
-import Input from './components/input';
-import Radio from './components/radio';
+
 
 function Viewer({ formData }) {
     return formData.map((question, index) => <div key={index}>{JSON.stringify(question)}</div>)
@@ -29,17 +28,15 @@ class Form extends React.Component {
         return this.state.formData.map((question, index) => {
             if (question.type === 'input') {
                 return (
-                    <div>
+                    <div key={`i${ index }`}>
                         {question.label}
-                        //原生写法
                         <input key={index} onChange={this.onChange.bind(this, question)} />
                     </div>
                 )
             } else if (question.type === 'radio') {
                 return (
-                    <div>
+                    <div key={`r${ index }`}>
                         <label>{question.label}
-                            //原生写法
                             <input type="radio" key={index} onChange={this.onChange.bind(this, question)} />
                         </label>
                     </div>
