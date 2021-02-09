@@ -1,9 +1,5 @@
 import React from 'react';
 class Input extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     onChange = (event) => {
         this.props.question.value = event.target.value;
         //页面演示时需要，实际开发可以删除

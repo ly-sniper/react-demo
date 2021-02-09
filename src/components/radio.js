@@ -1,9 +1,5 @@
 import React from 'react';
 class Radio extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     onChange = (event) => {
         console.log(event.target.value);
         this.props.question.value = event.target.value;
